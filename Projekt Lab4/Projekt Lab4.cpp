@@ -37,7 +37,7 @@ int main()
 		cout << fahr << "   " << celsius << endl;
 	}
 	cout << endl;
-
+	 
 	float fahr1, kelvin;
 	for (fahr1 = 0.0; fahr1 <= 200; fahr1 = fahr1 + 20) {
 		kelvin = FtoK(fahr1);
