@@ -28,52 +28,85 @@ float FtoC(float fahr) {
 	float wynik = (5.0 / 9.0) * (fahr - 32.0);
 	return wynik;
 }
+void program() {
+	cout << "Wybierz program" << endl << endl;
+	cout << "1 - przelicz Fahr -> Celsius" << endl;
+	cout << "2 - przelicz Fahr->Kelwin" << endl;
+	cout << "3 - przelicz Celsius->Fahr" << endl;
+	cout << "4 - przelicz Celsius->Kelwin" << endl;
+	cout << "5 - przelicz Kelwin->Celsius" << endl;
+	cout << "6 - przelicz Kelwin->Fahr" << endl;
+	cout << "7 - zakoncz dzialanie programu" << endl;
+}
+int fahr(int fahr) {
+	if 
+}
 
 int main()
 {
-	float fahr, celsius;
-	for (fahr = 0.0; fahr <= 200; fahr = fahr + 20) {
-		celsius = FtoC(fahr);
-		cout << fahr << "   " << celsius << endl;
-	}
-	cout << endl;
-	 
-	float fahr1, kelvin;
-	for (fahr1 = 0.0; fahr1 <= 200; fahr1 = fahr1 + 20) {
-		kelvin = FtoK(fahr1);
-		cout << fahr1 << "   " << kelvin << endl;
-	}
-	cout << endl;
+	int numerprogramu;
 
-	float celsius2, fahr2;
-	for (celsius2 = 0.0; celsius2 <= 200; celsius2 += 20) {
-		fahr2 = CtoF(celsius2);
-		cout << celsius2 << "   " << fahr2 << endl;
+	cout << "Ktory program chcesz uruchomic?" << endl;
+	program();
+	cin >> numerprogramu;
+
+	if (numerprogramu == 7) {
+		cout << "Koniec programu" << endl;
+		return 0;
 	}
-	cout << endl;
-
-	float celsius3, kelvin2;
-	for (celsius3 = 0.0; celsius3 <= 200; celsius3 += 20) {
-		kelvin2 = CtoK(celsius3);
-		cout << celsius3 << "   " << kelvin2 << endl;
+	else {
+		switch (numerprogramu) {
+		case(1): {
+			float fahr, celsius;
+			cout << "Podaj wartosc Fahr: ";
+			cin >> fahr;
+			fahr();
+			celsius = FtoC(fahr);
+			cout << fahr << " Fahr to " << celsius << " Celsius " << endl;
+			cout << endl; break;
+		}
+		case (2): {
+			float fahr1, kelvin;
+			cout << "Podaj wartosc Fahr: ";
+			cin >> fahr1;
+			kelvin = FtoK(fahr1);
+			cout << fahr1 << " Fahr to " << kelvin << " Kelvin " << endl;
+			cout << endl; break;
+		}
+		case (3): {
+			float celsius2, fahr2;
+			cout << "Podaj wartosc Celsius: ";
+			cin >> celsius2;
+			fahr2 = CtoF(celsius2);
+			cout << celsius2 << " Celsius to " << fahr2 << " Fahr " << endl;
+			cout << endl; break;
+		}
+		case (4): {
+			float celsius3, kelvin2;
+			cout << "Podaj wartosc Celsius: ";
+			cin >> celsius3;
+			kelvin2 = CtoK(celsius3);
+			cout << celsius3 << " Celsius to " << kelvin2 << " Fahr " << endl;
+			cout << endl; break;
+		}
+		case (5): {
+			float kelvin4, celsius4;
+			cout << "Podaj wartosc Kelvin: ";
+			cin >> kelvin4;
+			celsius4 = KtoC(kelvin4);
+			cout << kelvin4 << " Kelvin to " << celsius4 << " Celsius " << endl;
+			cout << endl; break;
+		}
+		case (6): {
+			float kelvin5, fahr5;
+			cout << "Podaj wartosc Kelvin: ";
+			cin >> kelvin5;
+			fahr5 = KtoC(kelvin5);
+			cout << kelvin5 << " Kelvin to " << fahr5 << " Celsius " << endl;
+			cout << endl; break;
+		}
+		}
 	}
-	cout << endl;
-
-	float kelvin4, celsius4;
-	for (kelvin4 = 0; kelvin4 <= 200; kelvin4 += 20) {
-		celsius4 = KtoC(kelvin4);
-		cout << kelvin4 << "   " << celsius4 << endl;
-	}
-	cout << endl;
-
-	float kelvin5, fahr5;
-	for (kelvin5 = 0; kelvin5 <= 200; kelvin5 += 20) {
-		fahr5 = KtoC(kelvin5);
-		cout << kelvin5 << "   " << fahr5 << endl;
-	}
-	cout << endl;
-
-
 }
 
 
