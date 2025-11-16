@@ -2,6 +2,7 @@
 //
 
 #include <iostream>
+#include <stdlib.h> // cls do czyszcenia ekranu
 using namespace std;
 
 float KtoF(float kelvin) {
@@ -61,115 +62,124 @@ int check(float temp, char stopnie) {
 	}
 }
 }
+
 int main()
 {
-	int numerprogramu;
+	
+	for (int i = 0; ; i++)
+	{
+		system("cls");
+		int numerprogramu;
 
-	cout << "Ktory program chcesz uruchomic ?" << endl;
-	program();
-	cin >> numerprogramu;
+		cout << "Ktory program chcesz uruchomic ?" << endl;
+		program();
+		cin >> numerprogramu;
 
-	if (numerprogramu == 7) {
-		cout << "Koniec programu" << endl;
-		return 0;
-	}
-	else {
-		switch (numerprogramu) {
-		case(1): {
-			float fahr, celsius;
-			cout << "Podaj wartosc Fahr: ";
-			cin >> fahr;
-
-			int wynik = check(fahr, 'F');
-			if (wynik == -999.0) {
-				cout << "Podano zly przedzial temperatury";
-			}
-			else {
-				celsius = FtoC(fahr);
-				cout << fahr << " Fahr to " << celsius << " Celsius " << endl;
-			}
-			cout << endl; break;
+		if (numerprogramu == 7) {
+			cout << "Koniec programu" << endl;
+			return 0;
 		}
-		case (2): {
-			float fahr, kelvin;
-			cout << "Podaj wartosc Fahr: ";
-			cin >> fahr;
+		else {
+			switch (numerprogramu) {
+			case(1): {
+				float fahr, celsius;
+				cout << "Podaj wartosc Fahr: ";
+				cin >> fahr;
 
-			int wynik = check(fahr, 'F');
-			if (wynik == -999.0) {
-				cout << "Podano zly zakres tempeartury";
+				int wynik = check(fahr, 'F');
+				if (wynik == -999.0) {
+					cout << "Podano zly przedzial temperatury";
+				}
+				else {
+					celsius = FtoC(fahr);
+					cout << fahr << " Fahr to " << celsius << " Celsius " << endl;
+				}
+				cout << endl; break;
 			}
-			else {
-				kelvin = FtoK(fahr);
-				cout << fahr << " Fahr to " << kelvin << " Kelvin " << endl;
-			}
-			cout << endl; break;
-		}
-		case (3): {
-			float celsius, fahr;
-			cout << "Podaj wartosc Celsius: ";
-			cin >> celsius;
+			case (2): {
+				float fahr, kelvin;
+				cout << "Podaj wartosc Fahr: ";
+				cin >> fahr;
 
-			int wynik = check(celsius, 'C');
-			if (wynik == -999.0){
-				cout << "Podano zly zakres temperatury";
+				int wynik = check(fahr, 'F');
+				if (wynik == -999.0) {
+					cout << "Podano zly zakres tempeartury";
+				}
+				else {
+					kelvin = FtoK(fahr);
+					cout << fahr << " Fahr to " << kelvin << " Kelvin " << endl;
+				}
+				cout << endl; break;
 			}
-			else {
-				fahr = CtoF(celsius);
-				cout << celsius << " Celsius to " << fahr << " Fahr " << endl;
-			}
-			cout << endl; break;
-			
-		}
-		case (4): {
-			float celsius, kelvin;
-			cout << "Podaj wartosc Celsius: ";
-			cin >> celsius;
+			case (3): {
+				float celsius, fahr;
+				cout << "Podaj wartosc Celsius: ";
+				cin >> celsius;
 
-			int wynik = check(celsius, 'C');
-			if (wynik == -999.0) {
-				cout << "Podano zly zakres temperatury";
-			}
-			else {
-				kelvin = CtoK(celsius);
-				cout << celsius << " Celsius to " << kelvin << " Kelvina " << endl;
-			}
-			cout << endl; break;
-		}
-		case (5): {
-			float kelvin, celsius;
-			cout << "Podaj wartosc Kelvin: ";
-			cin >> kelvin;
+				int wynik = check(celsius, 'C');
+				if (wynik == -999.0) {
+					cout << "Podano zly zakres temperatury";
+				}
+				else {
+					fahr = CtoF(celsius);
+					cout << celsius << " Celsius to " << fahr << " Fahr " << endl;
+				}
+				cout << endl; break;
 
-			int wynik = check(kelvin, 'K');
-			if (wynik == -999.0) {
-				cout << "Podano zly zakres temperatury";
 			}
-			else {
-				celsius = KtoC(kelvin);
-				cout << kelvin << " Kelvin to " << celsius << " Celsius " << endl;
-			}
-			cout << endl; break;
-		}
-		case (6): {
-			float kelvin, fahr;
-			cout << "Podaj wartosc Kelvin: ";
-			cin >> kelvin;
+			case (4): {
+				float celsius, kelvin;
+				cout << "Podaj wartosc Celsius: ";
+				cin >> celsius;
 
-			int wynik = check(kelvin, 'K');
-			if (wynik == -999.0) {
-				cout << "Podano zly zakres temperatury";
+				int wynik = check(celsius, 'C');
+				if (wynik == -999.0) {
+					cout << "Podano zly zakres temperatury";
+				}
+				else {
+					kelvin = CtoK(celsius);
+					cout << celsius << " Celsius to " << kelvin << " Kelvina " << endl;
+				}
+				cout << endl; break;
 			}
-			else {
-				fahr = KtoF(kelvin);
-				cout << kelvin << " Kelvin to " << fahr << " Fahr " << endl;
+			case (5): {
+				float kelvin, celsius;
+				cout << "Podaj wartosc Kelvin: ";
+				cin >> kelvin;
+
+				int wynik = check(kelvin, 'K');
+				if (wynik == -999.0) {
+					cout << "Podano zly zakres temperatury";
+				}
+				else {
+					celsius = KtoC(kelvin);
+					cout << kelvin << " Kelvin to " << celsius << " Celsius " << endl;
+				}
+				cout << endl; break;
 			}
-			cout << endl; break;
-			
-		}
-		default: {
-			cout << "Podano zly numer programu" << endl;
-		}
+			case (6): {
+				float kelvin, fahr;
+				cout << "Podaj wartosc Kelvin: ";
+				cin >> kelvin;
+
+				int wynik = check(kelvin, 'K');
+				if (wynik == -999.0) {
+					cout << "Podano zly zakres temperatury";
+				}
+				else {
+					fahr = KtoF(kelvin);
+					cout << kelvin << " Kelvin to " << fahr << " Fahr " << endl;
+				}
+				cout << endl; break;
+
+			}
+			default: {
+				cout << "Podano zly numer programu" << endl;
+			}
+			}
+			int enter;
+			cout << "aby przejsc dalej podaj wcisnij enter: ";
+			cin >> enter;
 		}
 	}
 }
