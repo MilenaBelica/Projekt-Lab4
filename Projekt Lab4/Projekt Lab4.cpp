@@ -4,24 +4,24 @@
 #include <iostream>
 using namespace std;
 
-float KtoF(float kelvin5) {
-	float wynik = (kelvin5 * 9.0 / 5.0 - 459.67);
+float KtoF(float kelvin) {
+	float wynik = (((kelvin- 273.15) * 9.0 / 5.0) +32);
 	return wynik;
 }
-float KtoC(float kelvin4) {
-	float wynik = (kelvin4 - 273.15);
+float KtoC(float kelvin) {
+	float wynik = (kelvin - 273.15);
 	return wynik;
 }
-float CtoK(float celsius3) {
-	float wynik = (celsius3 + 273.15);
+float CtoK(float celsius) {
+	float wynik = (celsius + 273.15);
 	return wynik;
 }
-float CtoF(float celsius2) {
-	float wynik = (celsius2 * 9.0 / 5.0) + 32.0;
+float CtoF(float celsius) {
+	float wynik = (celsius * 9.0 / 5.0) + 32.0;
 	return wynik;
 }
-float FtoK(float fahr1) {
-	float wynik = (5.0 / 9.0) * (fahr1 + 459.67);
+float FtoK(float fahr) {
+	float wynik = (5.0 / 9.0) * (fahr + 459.67);
 	return wynik;
 }
 float FtoC(float fahr) {
@@ -29,7 +29,7 @@ float FtoC(float fahr) {
 	return wynik;
 }
 void program() {
-	cout << "Wybierz program" << endl << endl;
+	cout << "Wybierz program: " << endl;
 	cout << "1 - przelicz Fahr -> Celsius" << endl;
 	cout << "2 - przelicz Fahr->Kelwin" << endl;
 	cout << "3 - przelicz Celsius->Fahr" << endl;
@@ -65,7 +65,7 @@ int main()
 {
 	int numerprogramu;
 
-	cout << "Ktory program chcesz uruchomic?" << endl;
+	cout << "Ktory program chcesz uruchomic ?" << endl;
 	program();
 	cin >> numerprogramu;
 
@@ -132,7 +132,7 @@ int main()
 			}
 			else {
 				kelvin = CtoK(celsius);
-				cout << celsius << " Celsius to " << kelvin << " Fahr " << endl;
+				cout << celsius << " Celsius to " << kelvin << " Kelvina " << endl;
 			}
 			cout << endl; break;
 		}
@@ -161,10 +161,14 @@ int main()
 				cout << "Podano zly zakres temperatury";
 			}
 			else {
-				fahr = KtoC(kelvin);
-				cout << kelvin << " Kelvin to " << fahr << " Celsius " << endl;
+				fahr = KtoF(kelvin);
+				cout << kelvin << " Kelvin to " << fahr << " Fahr " << endl;
 			}
 			cout << endl; break;
+			
+		}
+		default: {
+			cout << "Podano zly numer programu" << endl;
 		}
 		}
 	}
